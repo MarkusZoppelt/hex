@@ -1644,10 +1644,11 @@ fn the_wheel_scrolls_a_long_term_list() {
     }
 }
 
-/// The model picker sheet's list scrolls with the wheel too.
+/// The model picker's full list scrolls with the wheel too; the comparison
+/// it opens on fits without scrolling.
 #[test]
 fn the_wheel_scrolls_the_model_picker() {
-    let mut rt = runtime("picker-downloading", true, (900.0, 480.0));
+    let mut rt = runtime("picker-custom-models", true, (900.0, 480.0));
     let list = element(&rt, "model-scroll").rect;
     let first = |rt: &Runtime<Ui>| {
         rt.elements()
